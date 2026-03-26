@@ -84,10 +84,7 @@ source scripts/utils.sh
 echo "Installing additional apps..."
 source scripts/apps.sh
 
-echo "Installing EWW..."
-source scripts/eww.sh
-
 echo "Setting up configs..."
-cp -r configs/* ~/.config/
+source scripts/configs.sh
 
 echo "Installation complete!"
