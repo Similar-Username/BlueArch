@@ -31,6 +31,7 @@ GUI_UTILS=(
     xfce4-settings          # For Thunar settings and appearance
     file-roller             # Archive manager
     thunar-archive-plugin   # Archive support in Thunar
+    nwg-displays            # GUI displays
     nwg-look-bin            # Theme installer for GTK/QT
 )
 
