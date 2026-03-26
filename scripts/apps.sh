@@ -49,6 +49,7 @@ DISPLAY_MANAGER=(
 
 # Install all packages
 install_pkg "${USER_APPS[@]}"
+install_pkg "${MEDIA_APPS[@]}"
 install_pkg "${FONTS_THEMES[@]}"
 install_pkg "${GUI_UTILS[@]}"
 install_pkg "${DISPLAY_MANAGER[@]}"
