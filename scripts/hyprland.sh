@@ -20,4 +20,14 @@ HYPR_PACKAGES=(
     eww-bin
 )
 
+NVIDIA_PACKAGES=(
+    nvidia                # main proprietary NVIDIA driver
+    nvidia-utils          # OpenGL, Vulkan, and other utilities
+    nvidia-settings       # optional GUI to tweak NVIDIA settings
+    libva-vdpau-driver    # NVIDIA VDPAU backend for VA-API
+    vulkan-icd-loader     # Vulkan loader
+)
+
+
+install_pkg "${NVIDIA_PACKAGES[@]}"
 install_pkg "${HYPR_PACKAGES[@]}"
