@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Installing  dependencies..."
+echo "Installing utilities dependencies..."
 
 NETWORK_PACKAGES=(
     NetworkManager
