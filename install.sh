@@ -78,14 +78,17 @@ source scripts/base.sh
 echo "Installing Hyprland..."
 source scripts/hyprland.sh
 
-echo "Installing EWW..."
-source scripts/eww.sh
+echo "Installing network stack..."
+source scripts/network.sh
 
 echo "Installing audio stack..."
 source scripts/audio.sh
 
 echo "Installing additional apps..."
 source scripts/apps.sh
+
+echo "Installing EWW..."
+source scripts/eww.sh
 
 echo "Setting up configs..."
 cp -r configs/* ~/.config/
