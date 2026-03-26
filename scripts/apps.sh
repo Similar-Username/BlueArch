@@ -25,7 +25,6 @@ FONTS_THEMES=(
 
 # GUI utilities (optional)
 GUI_UTILS=(
-    pavucontrol            # GUI volume control
     lxappearance            # GTK theme/icon switcher
     xfce4-settings          # For Thunar settings and appearance
     file-roller             # Archive manager
@@ -33,9 +32,6 @@ GUI_UTILS=(
     nwg-look-bin            # Theme installer for GTK/QT
 )
 
-UTILS=(
-    
-)
 
 # Display manager (optional, only if you want login screen)
 DISPLAY_MANAGER=(
