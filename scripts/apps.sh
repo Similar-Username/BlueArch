@@ -8,12 +8,21 @@ USER_APPS=(
     thunar                 # File manager
     zed-bin                # Text editor
     rofi                   # App launcher
-    vlc                    # Media player
-    imv                    # Image viewer 
-    swappy                 # Screenshot
+    steam                  # Game launcher & windows app Launcher
+    discord                # Communications
     wl-clipboard           # Copy-paste
     btop                   # Resource monitor
     brightnessctl          # Backlight control
+)
+
+MEDIA_APPS=(
+    imv                    # Image viewer 
+    vlc                    # Media player
+    obs-studio             # Screen recording
+    grim                   # for Swappy
+    slurp                  # for Swappy
+    swappy                 # Screenshot
+
 )
 
 # Fonts & themes
