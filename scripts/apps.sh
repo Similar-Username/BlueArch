@@ -25,13 +25,6 @@ MEDIA_APPS=(
 
 )
 
-# Fonts & themes
-FONTS_THEMES=(
-    ttf-jetbrains-mono-nerd   # Nerd font for terminals
-    noto-fonts-emoji          # Emoji support
-    papirus-icon-theme        # Desktop icons
-)
-
 # GUI utilities (optional)
 GUI_UTILS=(
     lxappearance            # GTK theme/icon switcher
@@ -50,6 +43,5 @@ DISPLAY_MANAGER=(
 # Install all packages
 install_pkg "${USER_APPS[@]}"
 install_pkg "${MEDIA_APPS[@]}"
-install_pkg "${FONTS_THEMES[@]}"
 install_pkg "${GUI_UTILS[@]}"
 install_pkg "${DISPLAY_MANAGER[@]}"
