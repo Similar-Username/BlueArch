@@ -35,7 +35,7 @@ install_clone() {
     if command -v "$pkg" &> /dev/null; then
         echo "$pkg is already installed."
         return 0
-    if
+    fi
     
     echo "Making $pkg via git clone..."
     git clone "https://aur.archlinux.org/$pkg.git" "$tmpdir" || return 1
