@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "➡️ Installing Core dependencies..."
+echo "Installing Core dependencies..."
 
 CORE_PACKAGES=(
     git          
