@@ -38,16 +38,16 @@ install_clone() {
     fi
     
     echo "Making $pkg via git clone..."
-    git clone "https://aur.archlinux.org/$pkg.git" "$tmpdir" || return 1
+    git clone "https://aur.archlinux.org/$pkg.git" "$tmpdir/$pkg" || return 1
     
     (
-        cd "$tmpdir" || return 1
+        cd "$tmpdir/$pkg" || return 1
         makepkg -si --noconfirm
     )
     
     local result=$?
     
-    rm -rf "$tmpdir"
+    rm -rf "$tmpdir/$pkg"
     return $result
 }
 
