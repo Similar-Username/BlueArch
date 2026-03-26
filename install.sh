@@ -71,6 +71,7 @@ install_pkg() {
 
 cd "$(dirname "$0")"
 
+sudo pacman -Sy
 
 echo "Installing base dependencies..."
 source scripts/base.sh
