@@ -3,9 +3,12 @@ set -e
 set -u  
 
 install_pkg() {
-  echo "Installing $@"
-  sudo pacman -S --needed --noconfirm "$@"
+    for pkg in "$@"; do
+        echo "Installing $pkg..."
+        sudo pacman -S --needed --noconfirm "$pkg"
+    done
 }
+
 
 cd "$(dirname "$0")"
 
