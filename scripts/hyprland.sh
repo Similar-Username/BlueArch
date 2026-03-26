@@ -14,6 +14,10 @@ HYPR_PACKAGES=(
     qt5ct
     qt6-wayland
     qt6ct
+    polkit
+    hyprpolkit
+    mako
+    eww-bin
 )
 
 install_pkg "${HYPR_PACKAGES[@]}"
