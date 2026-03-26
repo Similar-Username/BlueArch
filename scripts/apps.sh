@@ -3,20 +3,22 @@
 echo " Installing user applications..."
 
 USER_APPS=(
-    firefox                # Web browser
-    vlc                    # Media player
-    kitty                  # Terminal emulator
+    kitty                  # Terminal
+    microsoft-edge-dev     # Browser
     thunar                 # File manager
-    zed
-    swappy                 # Screenshot annotation tool
+    zed-bin                # Text editor
+    rofi                   # App launcher
+    vlc                    # Media player
+    imv                    # Image viewer 
+    swappy                 # Screenshot
+    wl-clipboard           # Copy-paste
     btop                   # Resource monitor
-    pamixer                # CLI volume control
     brightnessctl          # Backlight control
 )
 
 # Fonts & themes
 FONTS_THEMES=(
-    ttf-jetbrains-mono-nerd  # Nerd font for terminals
+    ttf-jetbrains-mono-nerd   # Nerd font for terminals
     noto-fonts-emoji          # Emoji support
     papirus-icon-theme        # Desktop icons
 )
@@ -29,6 +31,10 @@ GUI_UTILS=(
     file-roller             # Archive manager
     thunar-archive-plugin   # Archive support in Thunar
     nwg-look-bin            # Theme installer for GTK/QT
+)
+
+UTILS=(
+    
 )
 
 # Display manager (optional, only if you want login screen)
