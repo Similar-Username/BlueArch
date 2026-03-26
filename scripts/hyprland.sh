@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "➡️ Installing Hyprland and core Wayland dependencies..."
+echo "Installing Hyprland and core Wayland dependencies..."
 
 HYPR_PACKAGES=(
     hyprland
