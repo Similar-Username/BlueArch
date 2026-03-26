@@ -79,10 +79,7 @@ echo "Installing Hyprland..."
 source scripts/hyprland.sh
 
 echo "Installing network stack..."
-source scripts/network.sh
-
-echo "Installing audio stack..."
-source scripts/audio.sh
+source scripts/utils.sh
 
 echo "Installing additional apps..."
 source scripts/apps.sh
