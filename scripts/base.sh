@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "➡️ Installing Core dependencies..."
+
 CORE_PACKAGES=(
     git          
     base-devel  
