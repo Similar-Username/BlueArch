@@ -55,19 +55,17 @@ install_clone() {
 
 install_pkg() {
     for pkg in "$@"; do
+        echo "Processing $pkg..."
+        
         if install_pacman "$pkg"; then
             continue
-        fi
-        
-        if install_yay "$pkg"; then
+        elif install_yay "$pkg"; then
             continue
-        fi
-
-        if install_clone "$pkg"; then
+        elif install_clone "$pkg"; then
             continue
+        else
+            echo "Failed to install $pkg."
         fi
-
-        echo "Failed to install $pkg."
     done
 }
 
