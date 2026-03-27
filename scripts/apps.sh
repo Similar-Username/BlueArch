@@ -22,7 +22,6 @@ MEDIA_APPS=(
     grim                   # for Swappy
     slurp                  # for Swappy
     swappy                 # Screenshot
-
 )
 
 # GUI utilities (optional)
