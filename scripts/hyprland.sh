@@ -22,10 +22,16 @@ HYPR_PACKAGES=(
 
 NVIDIA_PACKAGES=(
     nvidia                # main proprietary NVIDIA driver
+    nvidia-dkms
     nvidia-utils          # OpenGL, Vulkan, and other utilities
     nvidia-settings       # optional GUI to tweak NVIDIA settings
     libva-vdpau-driver    # NVIDIA VDPAU backend for VA-API
     vulkan-icd-loader     # Vulkan loader
+    lib32-glibc                #lib32 stuff for steam 
+    lib32-mesa 
+    lib32-vulkan-icd-loader 
+    lib32-nvidia-utils
+    lib32-glu
 )
 
 
