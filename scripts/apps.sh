@@ -3,10 +3,11 @@
 echo " Installing user applications..."
 
 USER_APPS=(
+    microsoft-edge-stable-bin # Browser       yay
+    zed                    # Text editor   yay 
+    eww                    # Status bar    yay
+    localsend-bin          # File Sharing yay
     kitty                  # Terminal
-    microsoft-edge-dev     # Browser
-    thunar                 # File manager
-    zed-bin                # Text editor
     rofi                   # App launcher
     steam                  # Game launcher & windows app Launcher
     discord                # Communications
@@ -15,23 +16,33 @@ USER_APPS=(
     brightnessctl          # Backlight control
 )
 
+FILE_MANAGER=(
+    file-roller             # Archive manager
+    udisks2                 # Disk access
+    gvfs                    # Disk access
+    gvfs-smb                # Disk access
+    thunar-volman           # Disk access
+    thunar                  # Main File manager
+    thunar-archive-plugin   # Archive support in Thunar
+)
+
 MEDIA_APPS=(
     imv                    # Image viewer 
-    vlc                    # Media player
+    mpv                    # Media player
     obs-studio             # Screen recording
     grim                   # for Swappy
     slurp                  # for Swappy
     swappy                 # Screenshot
 )
 
-# GUI utilities (optional)
+# GUI utilities
 GUI_UTILS=(
-    lxappearance            # GTK theme/icon switcher
-    xfce4-settings          # For Thunar settings and appearance
-    file-roller             # Archive manager
-    thunar-archive-plugin   # Archive support in Thunar
+    nwg-look                # GTK theme/icon switcher
+    xfce4-settings          # ________________________Dunno if this is useful
     nwg-displays            # GUI displays
-    nwg-look-bin            # Theme installer for GTK/QT
+    awww                    # wallpaper
+    cava                    # for audio visualizer for EWW
+    socat                   # for workspaces EWW
 )
 
 
@@ -41,6 +52,7 @@ DISPLAY_MANAGER=(
 )
 
 # Install all packages
+install_pkg "${FILE_MANAGER[@]}"
 install_pkg "${USER_APPS[@]}"
 install_pkg "${MEDIA_APPS[@]}"
 install_pkg "${GUI_UTILS[@]}"
