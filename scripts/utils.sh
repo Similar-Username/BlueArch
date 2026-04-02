@@ -5,6 +5,7 @@ echo "Installing utilities dependencies..."
 NETWORK_PACKAGES=(
     NetworkManager
     network-manager-applet
+    nm-connection-editor
     bluez
     bluez-utils
     bluez-libs
