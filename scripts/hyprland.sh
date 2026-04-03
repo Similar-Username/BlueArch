@@ -14,10 +14,10 @@ HYPR_PACKAGES=(
     qt5ct
     qt6-wayland
     qt6ct
-    polkit
-    hyprpolkit
-    mako
-    eww-bin
+    polkit               # Athentication agaent 
+    hyprpolkit           # Athentication agaent
+    mako                 # Notifications
+    awww                 # Wallpapers   
 )
 
 NVIDIA_PACKAGES=(
