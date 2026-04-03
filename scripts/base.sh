@@ -6,7 +6,6 @@ CORE_PACKAGES=(
     git          
     base-devel  
     sudo        
-    yay
     curl        
     wget
     unzip
