@@ -34,6 +34,11 @@ NVIDIA_PACKAGES=(
     lib32-glu
 )
 
+WINDOWMANAGER=(
+    sddm                  #Session manager
+)
+
 
 install_pkg "${NVIDIA_PACKAGES[@]}"
 install_pkg "${HYPR_PACKAGES[@]}"
+install_pkg "${WINDOWMANAGER[@]}"
