@@ -7,14 +7,14 @@ personal arch hyprland installation for when I nuke it.
 
 
 # What this sht does
-Hyperland setup with basic configs
-thunar 
-steam
-discord
-edge 
-sddm configs
-eww configs
-wallpaper
+## Hyperland setup with basic configs
+## thunar 
+## steam
+## discord
+## edge 
+## sddm configs
+## eww configs
+## wallpaper
 
-no extra stuff
+## no extra stuff
 
