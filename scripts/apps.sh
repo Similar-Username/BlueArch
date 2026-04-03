@@ -45,15 +45,8 @@ GUI_UTILS=(
     socat                   # for workspaces EWW
 )
 
-
-# Display manager (optional, only if you want login screen)
-DISPLAY_MANAGER=(
-    sddm
-)
-
 # Install all packages
 install_pkg "${FILE_MANAGER[@]}"
 install_pkg "${USER_APPS[@]}"
 install_pkg "${MEDIA_APPS[@]}"
 install_pkg "${GUI_UTILS[@]}"
-install_pkg "${DISPLAY_MANAGER[@]}"
