@@ -21,6 +21,8 @@ FILE_MANAGER=(
     udisks2                 # Disk access
     gvfs                    # Disk access
     gvfs-smb                # Disk access
+    gvfs-mtp                # for phones 
+    mtpfs                   # for phones
     thunar-volman           # Disk access
     thunar                  # Main File manager
     thunar-archive-plugin   # Archive support in Thunar
