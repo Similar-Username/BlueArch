@@ -17,7 +17,6 @@ HYPR_PACKAGES=(
     polkit               # Athentication agaent 
     hyprpolkit           # Athentication agaent
     mako                 # Notifications
-    awww                 # Wallpapers   
 )
 
 NVIDIA_PACKAGES=(
