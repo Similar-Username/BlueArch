@@ -11,7 +11,7 @@ install_pacman() {
     fi
 
     echo "Installing $pkg via pacman..."
-    sudo pacman -S --needed --noconfirm "$pkg"
+    sudo pacman -S --needed --noconfirm "$pkg" &> /dev/null;
 }
 
 
@@ -24,31 +24,7 @@ install_yay(){
     fi
     
     echo "Installing $pkg via yay..."
-    yay -S --needed --noconfirm "$pkg" || return 1
-}
-
-
-install_clone() {
-    local pkg="$1"
-    local tmpdir="/tmp/$pkg"
-    
-    if command -v "$pkg" &> /dev/null; then
-        echo "$pkg is already installed."
-        return 0
-    fi
-    
-    echo "Making $pkg via git clone..."
-    git clone "https://aur.archlinux.org/$pkg.git" "$tmpdir/$pkg" || return 1
-    
-    (
-        cd "$tmpdir/$pkg" || return 1
-        makepkg -si --noconfirm
-    )
-    
-    local result=$?
-    
-    rm -rf "$tmpdir/$pkg"
-    return $result
+    yay -S --needed --noconfirm "$pkg" &> /dev/null || return 1
 }
 
 
@@ -56,18 +32,17 @@ install_clone() {
 install_pkg() {
     for pkg in "$@"; do
         echo "Processing $pkg..."
-        
         if install_pacman "$pkg"; then
-            continue
+            echo "$pkg installed via pacman."
         elif install_yay "$pkg"; then
-            continue
-        elif install_clone "$pkg"; then
-            continue
+            echo "$pkg installed via yay."
         else
             echo "Failed to install $pkg."
         fi
     done
 }
+
+
 
 cd "$(dirname "$0")"
 
@@ -75,6 +50,9 @@ sudo pacman -Sy
 
 echo "Installing base dependencies..."
 source scripts/base.sh
+
+echo "Preparing Installations..."
+source scripts/prepInstall.sh
 
 echo "Installing Hyprland..."
 source scripts/hyprland.sh
