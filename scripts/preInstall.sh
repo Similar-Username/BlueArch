@@ -16,6 +16,8 @@ fi
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si --noconfirm
-rm -rf yay; 
 
+cd /tmp
+rm -rf yay; 
+cd ~
 
