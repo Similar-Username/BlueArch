@@ -18,6 +18,7 @@ AUDIO_PACKAGES=(
     wireplumber
     pavucontrol
     alsa-utils
+    pamixer
 )
 
 install_pkg "${NETWORK_PACKAGES[@]}"
