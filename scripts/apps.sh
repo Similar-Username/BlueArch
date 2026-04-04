@@ -35,6 +35,7 @@ MEDIA_APPS=(
     grim                   # for Swappy
     slurp                  # for Swappy
     swappy                 # Screenshot
+    playerctl              # Media playback control
 )
 
 # GUI utilities
