@@ -35,6 +35,7 @@ NVIDIA_PACKAGES=(
 
 WINDOWMANAGER=(
     sddm                  #Session manager
+    hyprlock              #Lockscreen
 )
 
 
