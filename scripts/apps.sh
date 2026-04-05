@@ -9,6 +9,7 @@ USER_APPS=(
     localsend-bin          # File Sharing yay
     kitty                  # Terminal
     rofi                   # App launcher
+    libreoffice-fresh
     steam                  # Game launcher & windows app Launcher
     discord                # Communications
     wl-clipboard           # Copy-paste
