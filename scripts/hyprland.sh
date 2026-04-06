@@ -27,8 +27,13 @@ nvidia_repos=(
     "lib32-nvidia-utils              |pacman |32-bit NVIDIA utils for Steam"
 )
 
-wm_repos=(
+shwm_repos=(
     "sddm                            |pacman |Display and session manager"
+    "qt6-5compat                     |pacman |SDDM theme dependency"
+    "qt6-declarative                 |pacman |SDDM theme dependency"
+    "qt6-multimedia-ffmpeg           |pacman |SDDM theme dependency"
+    "qt6-svg                         |pacman |SDDM theme dependency"
+    "qt6-virtualkeyboard             |pacman |SDDM theme dependency"
     "hyprlock                        |pacman |Hyprland lockscreen"
 )
 
