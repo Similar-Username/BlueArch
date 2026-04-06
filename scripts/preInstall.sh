@@ -17,6 +17,8 @@ if pacman -Qi "yay" &> /dev/null && [ "$reinstall" = "n" ]; then
 fi
 
 echo "" | tee -a "$log_file"
+
+prev_dir=$(pwd)
 cd /tmp
 rm -rf yay
 git clone https://aur.archlinux.org/yay.git >> "$log_file" 2>&1
@@ -25,4 +27,4 @@ makepkg -si --noconfirm >> "$log_file" 2>&1
 cd /tmp
 rm -rf yay
 
-cd - > /dev/null
+cd "$prev_dir"
