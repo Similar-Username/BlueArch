@@ -2,7 +2,6 @@
 # repo list: pkg|package_manager|description
 hypr_repos=(
     "hyprland                        |pacman |Wayland compositor"
-    "wlroots                         |pacman |Wayland compositor library"
     "wayland-protocols               |pacman |Wayland protocol extensions"
     "xorg-xwayland                   |pacman |XWayland compatibility"
     "xdg-desktop-portal-hyprland     |pacman |Desktop portal for Hyprland"
