@@ -12,6 +12,7 @@ user_repos=(
     "steam                       |pacman |Game launcher"
     "discord                     |pacman |Communications"
     "wl-clipboard                |pacman |Wayland clipboard"
+    "cliphist                    |pacman |Clipboard History"
     "btop                        |pacman |Resource monitor"
     "brightnessctl               |pacman |Backlight control"
 )
