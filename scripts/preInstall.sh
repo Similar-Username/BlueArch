@@ -1,23 +1,16 @@
 #!/bin/bash
-set -e  
 
 echo "Enabling multilib repository..."
 if ! grep -q "^\[multilib\]" /etc/pacman.conf; then
-    sudo sed -i '/#\[multilib\]/s/^#//' /etc/pacman.conf
-    sudo sed -i '/#Include = \/etc\/pacman.d\/mirrorlist/s/^#//' /etc/pacman.conf
+    printf '\n[multilib]\nInclude = /etc/pacman.d/mirrorlist\n' | sudo tee -a /etc/pacman.conf
     sudo pacman -Sy --noconfirm
 fi
 
-echo "Installing yay"
+echo "Installing yay..."
 cd /tmp
-if [ -d yay ]; then 
-    rm -rf yay; 
-fi
+rm -rf yay
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si --noconfirm
-
 cd /tmp
-rm -rf yay; 
-cd ~
-
+rm -rf yay
