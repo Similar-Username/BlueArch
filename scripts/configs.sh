@@ -1,14 +1,14 @@
 #!/bin/bash
 
-echo " Applying configurations..."
-
-FONTS_THEMES=(
-    ttf-jetbrains-mono-nerd   
-    noto-fonts-emoji         
-    papirus-icon-theme        
-    noto-fonts-cjk
+# repo list: pkg|package_manager|description
+fonts_repos=(
+    "ttf-jetbrains-mono-nerd  |pacman |JetBrains Mono Nerd Font"
+    "noto-fonts-emoji         |pacman |Emoji font"
+    "papirus-icon-theme       |pacman |Papirus icon theme"
+    "noto-fonts-cjk           |pacman |CJK language font"
 )
 
-install_pkg "${FONTS_THEMES[@]}"
+install_pkg "${fonts_repos[@]}"
 
-cp -r ../configs/* ~/.config/
+
+cp -r configs/* ~/.config/
