@@ -24,3 +24,5 @@ cd yay
 makepkg -si --noconfirm >> "$log_file" 2>&1
 cd /tmp
 rm -rf yay
+
+cd - > /dev/null
