@@ -17,11 +17,9 @@ hypr_repos=(
 )
 
 nvidia_repos=(
-    "nvidia                          |pacman |Proprietary NVIDIA driver"
     "nvidia-dkms                     |pacman |NVIDIA DKMS kernel module"
     "nvidia-utils                    |pacman |NVIDIA OpenGL and Vulkan utils"
     "nvidia-settings                 |pacman |NVIDIA settings GUI"
-    "libva-vdpau-driver              |pacman |NVIDIA VDPAU backend for VA-API"
     "vulkan-icd-loader               |pacman |Vulkan loader"
     "lib32-glibc                     |pacman |32-bit glibc for Steam"
     "lib32-mesa                      |pacman |32-bit Mesa for Steam"
