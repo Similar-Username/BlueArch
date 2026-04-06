@@ -3,8 +3,8 @@
 echo "Installing Hyprland and core Wayland dependencies..."
 
 HYPR_PACKAGES=(
-    hyprland
-    wlroots
+    "hyprland                    |pacman |Wayland compositor"
+    "wlroots                      |pacman |Wayland compositor library"
     wayland-protocols
     xorg-xwayland
     xdg-desktop-portal-hyprland
