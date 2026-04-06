@@ -27,7 +27,6 @@ nvidia_repos=(
     "lib32-mesa                      |pacman |32-bit Mesa for Steam"
     "lib32-vulkan-icd-loader         |pacman |32-bit Vulkan loader for Steam"
     "lib32-nvidia-utils              |pacman |32-bit NVIDIA utils for Steam"
-    "lib32-glu                       |pacman |32-bit GLU library for Steam"
 )
 
 wm_repos=(
