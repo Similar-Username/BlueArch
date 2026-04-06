@@ -1,56 +1,52 @@
 #!/bin/bash
 
-echo " Installing user applications..."
-
-USER_APPS=(
-    microsoft-edge-stable-bin # Browser       yay
-    zed                    # Text editor   yay 
-    eww                    # Status bar    yay
-    localsend-bin          # File Sharing yay
-    kitty                  # Terminal
-    rofi                   # App launcher
-    libreoffice-fresh
-    steam                  # Game launcher & windows app Launcher
-    discord                # Communications
-    wl-clipboard           # Copy-paste
-    btop                   # Resource monitor
-    brightnessctl          # Backlight control
+# repo list: pkg|package_manager|description
+user_repos=(
+    "microsoft-edge-stable-bin   |yay    |Web browser"
+    "zed                         |yay    |Text editor"
+    "eww                         |yay    |Status bar"
+    "localsend-bin               |yay    |File sharing"
+    "kitty                       |pacman |Terminal emulator"
+    "rofi                        |pacman |App launcher"
+    "libreoffice-fresh           |pacman |Office suite"
+    "steam                       |pacman |Game launcher"
+    "discord                     |pacman |Communications"
+    "wl-clipboard                |pacman |Wayland clipboard"
+    "btop                        |pacman |Resource monitor"
+    "brightnessctl               |pacman |Backlight control"
 )
 
-FILE_MANAGER=(
-    file-roller             # Archive manager
-    udisks2                 # Disk access
-    gvfs                    # Disk access
-    gvfs-smb                # Disk access
-    gvfs-mtp                # for phones 
-    mtpfs                   # for phones
-    thunar-volman           # Disk access
-    thunar                  # Main File manager
-    thunar-archive-plugin   # Archive support in Thunar
+file_manager_repos=(
+    "file-roller                 |pacman |Archive manager"
+    "udisks2                     |pacman |Disk automount daemon"
+    "gvfs                        |pacman |Virtual filesystem"
+    "gvfs-smb                    |pacman |SMB network share support"
+    "gvfs-mtp                    |pacman |MTP device support"
+    "mtpfs                       |pacman |MTP FUSE filesystem"
+    "thunar-volman               |pacman |Thunar volume manager"
+    "thunar                      |pacman |File manager"
+    "thunar-archive-plugin       |pacman |Archive support for Thunar"
 )
 
-MEDIA_APPS=(
-    imv                    # Image viewer 
-    mpv                    # Media player
-    obs-studio             # Screen recording
-    grim                   # for Swappy
-    slurp                  # for Swappy
-    swappy                 # Screenshot
-    playerctl              # Media playback control
+media_repos=(
+    "imv                         |pacman |Image viewer"
+    "mpv                         |pacman |Media player"
+    "obs-studio                  |pacman |Screen recording"
+    "grim                        |pacman |Wayland screenshot tool"
+    "slurp                       |pacman |Wayland region selector"
+    "swappy                      |pacman |Screenshot annotation"
+    "playerctl                   |pacman |Media playback control"
 )
 
-# GUI utilities
-GUI_UTILS=(
-    nwg-look                # GTK theme/icon switcher
-    xfce4-settings          # ________________________Dunno if this is useful
-    nwg-displays            # GUI displays
-    awww                    # wallpaper
-    cava                    # for audio visualizer for EWW
-    socat                   # for workspaces EWW
+gui_util_repos=(
+    "nwg-look                    |pacman |GTK theme switcher"
+    "nwg-displays                |pacman |Display configuration GUI"
+    "swww                        |pacman |Wallpaper daemon"
+    "cava                        |pacman |Audio visualizer"
+    "socat                       |pacman |Socket utility for EWW"
 )
 
-# Install all packages
-install_pkg "${FILE_MANAGER[@]}"
-install_pkg "${USER_APPS[@]}"
-install_pkg "${MEDIA_APPS[@]}"
-install_pkg "${GUI_UTILS[@]}"
+install_pkg "${file_manager_repos[@]}"
+install_pkg "${user_repos[@]}"
+install_pkg "${media_repos[@]}"
+install_pkg "${gui_util_repos[@]}"
