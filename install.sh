@@ -44,7 +44,7 @@ done
 
 cd "$(dirname "$0")"
 
-sudo pacman -Syu
+sudo pacman -Syu --noconfirm
 
 echo "Installing base dependencies..."
 source scripts/base.sh
