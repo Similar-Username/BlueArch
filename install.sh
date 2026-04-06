@@ -1,43 +1,34 @@
 #!/bin/bash
-set -e  
-set -u  
-
-install_pacman() {
-    local pkg="$1"
-
-    if pacman -Q "$pkg" &> /dev/null || command -v "$pkg" &> /dev/null; then
-        echo "$pkg already installed"
-        return 0
-    fi
-
-    echo "Installing $pkg via pacman..."
-    sudo pacman -S --needed --noconfirm "$pkg" &> /dev/null;
-}
-
-
-install_yay(){
-    local pkg="$1"
-    
-    if pacman -Q "$pkg" &> /dev/null || yay -Q "$pkg" &> /dev/null; then
-        echo "$pkg already installed"
-        return 0
-    fi
-    
-    echo "Installing $pkg via yay..."
-    yay -S --needed --noconfirm "$pkg" &> /dev/null || return 1
-}
-
-
+reinstall=false
+log_file="/tmp/install_$(date +%Y%m%d_%H%M%S).log"
+failed=()
 
 install_pkg() {
-    for pkg in "$@"; do
-        echo "Processing $pkg..."
-        if install_pacman "$pkg"; then
-            echo "$pkg installed via pacman."
-        elif install_yay "$pkg"; then
-            echo "$pkg installed via yay."
+    for repo in "$@"; do
+        echo "======================================================================================" >> $log_file
+        IFS="|" read -r pkg pm description <<< "$repo"
+        pkg="${pkg// /}"
+        pm="${pm// /}"
+
+        printf "%-50s : " "Installing $pkg ($description)" | tee -a "$log_file"
+
+        if pacman -Qi "$pkg" &> /dev/null && [ "$reinstall" = false ]; then
+            echo "already installed" | tee -a "$log_file"
+            continue
+        fi
+
+        local -a install_cmd
+        case "$pm" in
+            pacman) install_cmd=(sudo pacman -S --needed --noconfirm "$pkg") ;;
+            yay)    install_cmd=(yay -S --needed --noconfirm "$pkg") ;;
+            *)      echo "unknown package manager $pm" | tee -a "$log_file"; failed+=("$pkg"); continue;;
+        esac
+
+        if "${install_cmd[@]}" >> "$log_file" 2>&1; then
+            echo "installed" | tee -a "$log_file"
         else
-            echo "Failed to install $pkg."
+            echo "FAILED (see $log_file)" | tee -a "$log_file"
+            failed+=("$pkg")
         fi
     done
 }
@@ -46,7 +37,7 @@ install_pkg() {
 
 cd "$(dirname "$0")"
 
-sudo pacman -Sy
+sudo pacman -Syu
 
 echo "Installing base dependencies..."
 source scripts/base.sh
@@ -67,3 +58,13 @@ echo "Setting up configs..."
 source scripts/configs.sh
 
 echo "Installation complete!"
+
+
+
+if [ ${#failed[@]} -gt 0 ]; then
+    echo ""
+    echo "Failed installs: ${failed[*]}"
+    echo "Check logs: $log_file"
+fi
+
+
