@@ -1,0 +1,16 @@
+# Timeout
+default-timeout=2000
+
+# Position
+anchor=top-center
+margin=20
+
+# Dark theme
+background-color=#1e1e2e
+text-color=#cdd6f4
+border-color=#89b4fa
+
+# Optional styling
+border-size=2
+border-radius=10
+padding=10
