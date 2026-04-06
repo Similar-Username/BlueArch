@@ -43,7 +43,7 @@ echo "Installing base dependencies..."
 source scripts/base.sh
 
 echo "Preparing Installations..."
-source scripts/prepInstall.sh
+source scripts/preInstall.sh
 
 echo "Installing Hyprland..."
 source scripts/hyprland.sh
