@@ -1,5 +1,4 @@
 #!/bin/bash
-reinstall=false
 log_file="/tmp/install_$(date +%Y%m%d_%H%M%S).log"
 failed=()
 
@@ -12,7 +11,7 @@ install_pkg() {
 
         printf "%-50s : " "Installing $pkg ($description)" | tee -a "$log_file"
 
-        if pacman -Qi "$pkg" &> /dev/null && [ "$reinstall" = false ]; then
+        if pacman -Qi "$pkg" &> /dev/null && [ "$reinstall" = "n" ]; then
             echo "already installed" | tee -a "$log_file"
             continue
         fi
@@ -34,6 +33,14 @@ install_pkg() {
 }
 
 
+echo "Welcome to BlueArch: A bare bones arch-hyprland installer"
+while [ "$reinstall" != "Y" ] && [ "$reinstall" != "n" ]; do
+    read -p "Reinstall [Y/n]: " reinstall
+done
+while [ "$apply_conf" != "Y" ] && [ "$apply_conf" != "n" ]; do
+    read -p "Apply Configs [Y/n]: " apply_conf
+done
+
 
 cd "$(dirname "$0")"
 
@@ -54,8 +61,10 @@ source scripts/utils.sh
 echo "Installing additional apps..."
 source scripts/apps.sh
 
-echo "Setting up configs..."
-source scripts/configs.sh
+if [ "$apply_conf" = "Y" ]; then
+    echo "Setting up configs..."
+    source scripts/configs.sh
+fi
 
 echo "Installation complete!"
 
