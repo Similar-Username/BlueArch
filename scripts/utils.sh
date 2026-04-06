@@ -1,25 +1,24 @@
 #!/bin/bash
 
-echo "Installing utilities dependencies..."
-
-NETWORK_PACKAGES=(
-    NetworkManager
-    network-manager-applet
-    nm-connection-editor
-    bluez
-    bluez-utils
-    bluez-libs
-    blueman
+# repo list: pkg|package_manager|description
+network_repos=(
+    "networkmanager          |pacman |Network manager daemon"
+    "network-manager-applet  |pacman |Network manager tray applet"
+    "nm-connection-editor    |pacman |Network connection editor"
+    "bluez                   |pacman |Bluetooth stack"
+    "bluez-utils             |pacman |Bluetooth CLI tools"
+    "bluez-libs              |pacman |Bluetooth libraries"
+    "blueman                 |pacman |Bluetooth manager GUI"
 )
 
-AUDIO_PACKAGES=(
-    pipewire
-    pipewire-pulse
-    wireplumber
-    pavucontrol
-    alsa-utils
-    pamixer
+audio_repos=(
+    "pipewire                |pacman |Audio server"
+    "pipewire-pulse          |pacman |PulseAudio compatibility"
+    "wireplumber             |pacman |Pipewire session manager"
+    "pavucontrol             |pacman |PulseAudio volume control GUI"
+    "alsa-utils              |pacman |ALSA CLI tools"
+    "pamixer                 |pacman |Pipewire CLI mixer"
 )
 
-install_pkg "${NETWORK_PACKAGES[@]}"
-install_pkg "${AUDIO_PACKAGES[@]}"
+install_pkg "${network_repos[@]}"
+install_pkg "${audio_repos[@]}"
