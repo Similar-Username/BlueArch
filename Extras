@@ -1,0 +1,21 @@
+will add later. 
+will make optionals allong with discord and localsend. 
+
+#for roblox
+pacman -S flatpak
+flatpak install flathub org.vinegarhq.Sober
+flatpak run org.vinegarhq.Sober     
+
+
+#for minecraft
+https://skmedix.pl/downloads
+sudo pacman -S jre-openjdk
+java -jar SK*.jar
+
+
+
+
+#for tailscale
+sudo pacman -S tailscale
+sudo systemctl enable --now tailscaled
+sudo tailscale up --authkey tskey-******
