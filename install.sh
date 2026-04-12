@@ -66,6 +66,11 @@ if [ "$apply_conf" = "Y" ]; then
     source scripts/configs.sh
 fi
 
+
+echo "Enabling services..."
+sudo systemctl enable NetworkManager bluetooth sddm
+systemctl --user enable pipewire wireplumber
+
 echo "Installation complete!"
 
 
