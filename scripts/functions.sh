@@ -1,4 +1,4 @@
-#! bin/bash
+#!/bin/bash
 
 install_pkg() {
     for repo in "$@"; do
